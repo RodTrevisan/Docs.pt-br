@@ -22,10 +22,10 @@ Este documento demonstra como:
 * Redirecione todas as solicitações HTTP para HTTPS.
 
 > [!WARNING]
-> Fazer **não** usar [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) em APIs da Web que recebe informações confidenciais. `RequireHttpsAttribute` usa códigos de status HTTP para redirecionar navegadores de HTTP para HTTPS. Clientes de API podem não entender ou obedecer redirecionamentos de HTTP para HTTPS. Esses clientes podem enviar informações sobre HTTP. APIs da Web deverá:
+> **Não** use [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) em Web APIs que recebe informações confidenciais. `RequireHttpsAttribute` usa códigos de status HTTP para redirecionar navegadores de HTTP para HTTPS. Clientes de API podem não entender ou obedecer redirecionamentos de HTTP para HTTPS. Esses clientes podem enviar informações sobre HTTP. APIs da Web deverá:
 >
 > * Não escuta no HTTP.
-> * Feche a conexão com o código de status 400 (solicitação incorreta) e não atender à solicitação.
+> * Feche a conexão com o código de status 400 (Bad Request) e não atender à solicitação.
 
 <a name="require"></a>
 ## <a name="require-https"></a>Exigir HTTPS
